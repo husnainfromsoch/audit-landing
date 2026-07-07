@@ -543,7 +543,7 @@
 <nav>
   <div class="nav-inner">
     <a class="logo" href="#">soch<span>.</span></a>
-    <a class="nav-cta" href="thankyou.html">Book a Free Audit</a>
+    <a class="nav-cta" href="thankyou.html" data-cal-link="consult-with-riz/work" data-cal-config='{"layout":"month_view"}'>Book a Free Audit</a>
   </div>
 </nav>
 
@@ -561,7 +561,7 @@
       <div class="vsl-caption">Watch: how we automate your operations in 8 to 12 weeks (3 min)</div>
     </div>
 
-    <a class="btn" href="thankyou.html" id="book">Book Your Free Automation Audit</a>
+    <a class="btn" href="thankyou.html" id="book" data-cal-link="consult-with-riz/work" data-cal-config='{"layout":"month_view"}'>Book Your Free Automation Audit</a>
     <p class="btn-note"><strong>No retainer pitch, no obligation.</strong> 30 minutes on a call, and you leave with an automation roadmap either way.</p>
   </div>
 </header>
@@ -719,7 +719,7 @@
     </div>
 
     <div class="cta-block">
-      <a class="btn" href="thankyou.html">Book Your Free Automation Audit</a>
+      <a class="btn" href="thankyou.html" data-cal-link="consult-with-riz/work" data-cal-config='{"layout":"month_view"}'>Book Your Free Automation Audit</a>
       <p class="btn-note"><strong>30 minutes.</strong> You leave with a roadmap whether we work together or not.</p>
     </div>
   </div>
@@ -848,7 +848,7 @@
     </div>
 
     <div class="cta-block">
-      <a class="btn" href="thankyou.html">Book Your Free Automation Audit</a>
+      <a class="btn" href="thankyou.html" data-cal-link="consult-with-riz/work" data-cal-config='{"layout":"month_view"}'>Book Your Free Automation Audit</a>
       <p class="btn-note"><strong>See what these numbers look like for your operation.</strong></p>
     </div>
   </div>
@@ -894,7 +894,7 @@
   <div class="wrap">
     <h2>Find out what 15 hours a week back actually looks like</h2>
     <p>Book a free 30-minute automation audit. We map your processes, show you what to automate first, and you keep the roadmap either way.</p>
-    <a class="btn" href="thankyou.html">Book Your Free Automation Audit</a>
+    <a class="btn" href="thankyou.html" data-cal-link="consult-with-riz/work" data-cal-config='{"layout":"month_view"}'>Book Your Free Automation Audit</a>
     <p class="btn-note"><strong>No retainer pitch.</strong> If we are not the right fit, we will tell you on the call.</p>
   </div>
 </section>
@@ -904,6 +904,19 @@
     &copy; 2026 Soch &middot; <a href="https://www.withsoch.com/privacy-policy">Privacy Policy</a> &middot; <a href="https://www.withsoch.com/contact">Contact</a>
   </div>
 </footer>
+
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+  Cal("init", { origin: "https://cal.com" });
+
+  Cal("on", {
+    action: "bookingSuccessfulV2",
+    callback: (e) => {
+      window.location.href = "thankyou.html" + window.location.search;
+    }
+  });
+</script>
 
 </body>
 </html>
