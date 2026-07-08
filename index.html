@@ -544,7 +544,7 @@
 <nav>
   <div class="nav-inner">
     <a class="logo" href="#">soch<span>.</span></a>
-    <button type="button" class="nav-cta book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","theme":"light"}'>Book a Free Audit</button>
+    <button type="button" class="nav-cta book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book a Free Audit</button>
   </div>
 </nav>
 
@@ -562,7 +562,7 @@
       <div class="vsl-caption">Watch: how we automate your operations in 8 to 12 weeks (3 min)</div>
     </div>
 
-    <button type="button" class="btn book-audit-btn" id="book" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","theme":"light"}'>Book Your Free Automation Audit</button>
+    <button type="button" class="btn book-audit-btn" id="book" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book Your Free Automation Audit</button>
     <p class="btn-note"><strong>No retainer pitch, no obligation.</strong> 30 minutes on a call, and you leave with an automation roadmap either way.</p>
   </div>
 </header>
@@ -720,7 +720,7 @@
     </div>
 
     <div class="cta-block">
-      <button type="button" class="btn book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","theme":"light"}'>Book Your Free Automation Audit</button>
+      <button type="button" class="btn book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book Your Free Automation Audit</button>
       <p class="btn-note"><strong>30 minutes.</strong> You leave with a roadmap whether we work together or not.</p>
     </div>
   </div>
@@ -849,7 +849,7 @@
     </div>
 
     <div class="cta-block">
-      <button type="button" class="btn book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","theme":"light"}'>Book Your Free Automation Audit</button>
+      <button type="button" class="btn book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book Your Free Automation Audit</button>
       <p class="btn-note"><strong>See what these numbers look like for your operation.</strong></p>
     </div>
   </div>
@@ -895,7 +895,7 @@
   <div class="wrap">
     <h2>Find out what 15 hours a week back actually looks like</h2>
     <p>Book a free 30-minute automation audit. We map your processes, show you what to automate first, and you keep the roadmap either way.</p>
-    <button type="button" class="btn book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","theme":"light"}'>Book Your Free Automation Audit</button>
+    <button type="button" class="btn book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book Your Free Automation Audit</button>
     <p class="btn-note"><strong>No retainer pitch.</strong> If we are not the right fit, we will tell you on the call.</p>
   </div>
 </section>
@@ -906,29 +906,36 @@
   </div>
 </footer>
 
+<!-- Cal element-click embed code begins -->
 <script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); };
-  })(window, "https://app.cal.com/embed/embed.js", "init");
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "work", {origin:"https://app.cal.com"});
+Cal.config = Cal.config || {};
+Cal.config.forwardQueryParams = true;
 
-  Cal("init", "work", { origin: "https://cal.com" });
+  Cal.ns.work("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#1c1c1c"},"dark":{"cal-brand":"#e06048"}},"hideEventTypeDetails":false,"layout":"month_view"});
 
-  Cal.ns["work"]("ui", {
-    "theme": "light",
-    "cssVarsPerTheme": {
-      "light": { "cal-brand": "#EA6A47" },
-      "dark": { "cal-brand": "#EA6A47" }
-    },
-    "hideEventTypeDetails": false,
-    "layout": "month_view"
-  });
-
-  Cal.ns["work"]("on", {
+  Cal.ns.work("on", {
     action: "bookingSuccessful",
-    callback: function () {
+    callback: function (e) {
+      try {
+        var bookingData = e && e.detail ? e.detail.data : null;
+        fetch('https://sochconsulting.app.n8n.cloud/webhook/marketing_landing_page_emails_withsoch', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          keepalive: true,
+          body: JSON.stringify({
+            source: 'audit_landing_page',
+            timestamp: new Date().toISOString(),
+            booking: bookingData
+          })
+        });
+      } catch (err) {}
       window.location.href = 'thankyou.html' + window.location.search;
     }
   });
 </script>
+<!-- Cal element-click embed code ends -->
 
 </body>
 </html>
