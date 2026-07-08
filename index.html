@@ -511,6 +511,21 @@
   .final .btn-note{color:#FBEDE7;}
   .final .btn-note strong{color:#FFF;}
 
+  /* ---------- inline calendar ---------- */
+  .calendar-section{padding:90px 0;}
+  .calendar-section .wrap{max-width:900px;}
+  .calendar-section h2{
+    text-align:center;font-size:clamp(28px,4vw,40px);margin:0 auto 12px;
+  }
+  .calendar-section > .wrap > p{
+    text-align:center;color:var(--charcoal);max-width:520px;margin:0 auto 36px;
+  }
+  .cal-embed-frame{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    box-shadow:8px 8px 0 0 var(--line);overflow:hidden;
+  }
+  #cal-inline-embed{width:100%;height:100%;min-height:700px;}
+
   footer{
     padding:36px 0;text-align:center;
     font-size:13.5px;color:var(--charcoal);
@@ -543,7 +558,7 @@
 <nav>
   <div class="nav-inner">
     <a class="logo" href="#">soch<span>.</span></a>
-    <a class="nav-cta book-audit-btn" href="https://cal.com/consult-with-riz/work" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view"}'>Book a Free Audit</a>
+    <a class="nav-cta book-audit-btn" href="#calendar">Book a Free Audit</a>
   </div>
 </nav>
 
@@ -561,7 +576,7 @@
       <div class="vsl-caption">Watch: how we automate your operations in 8 to 12 weeks (3 min)</div>
     </div>
 
-    <a class="btn book-audit-btn" href="https://cal.com/consult-with-riz/work" id="book" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view"}'>Book Your Free Automation Audit</a>
+    <a class="btn book-audit-btn" href="#calendar" id="book">Book Your Free Automation Audit</a>
     <p class="btn-note"><strong>No retainer pitch, no obligation.</strong> 30 minutes on a call, and you leave with an automation roadmap either way.</p>
   </div>
 </header>
@@ -719,7 +734,7 @@
     </div>
 
     <div class="cta-block">
-      <a class="btn book-audit-btn" href="https://cal.com/consult-with-riz/work" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view"}'>Book Your Free Automation Audit</a>
+      <a class="btn book-audit-btn" href="#calendar">Book Your Free Automation Audit</a>
       <p class="btn-note"><strong>30 minutes.</strong> You leave with a roadmap whether we work together or not.</p>
     </div>
   </div>
@@ -848,7 +863,7 @@
     </div>
 
     <div class="cta-block">
-      <a class="btn book-audit-btn" href="https://cal.com/consult-with-riz/work" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view"}'>Book Your Free Automation Audit</a>
+      <a class="btn book-audit-btn" href="#calendar">Book Your Free Automation Audit</a>
       <p class="btn-note"><strong>See what these numbers look like for your operation.</strong></p>
     </div>
   </div>
@@ -894,8 +909,19 @@
   <div class="wrap">
     <h2>Find out what 15 hours a week back actually looks like</h2>
     <p>Book a free 30-minute automation audit. We map your processes, show you what to automate first, and you keep the roadmap either way.</p>
-    <a class="btn book-audit-btn" href="https://cal.com/consult-with-riz/work" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view"}'>Book Your Free Automation Audit</a>
+    <a class="btn book-audit-btn" href="#calendar">Book Your Free Automation Audit</a>
     <p class="btn-note"><strong>No retainer pitch.</strong> If we are not the right fit, we will tell you on the call.</p>
+  </div>
+</section>
+
+<!-- ============ 9. INLINE BOOKING CALENDAR ============ -->
+<section class="calendar-section" id="calendar">
+  <div class="wrap">
+    <h2>Pick a time that works</h2>
+    <p>Choose a slot below for your free 30-minute automation audit. No forms, no back-and-forth.</p>
+    <div class="cal-embed-frame">
+      <div id="cal-inline-embed"></div>
+    </div>
   </div>
 </section>
 
@@ -910,6 +936,12 @@
   })(window, "https://app.cal.com/embed/embed.js", "init");
 
   Cal("init", "work", { origin: "https://cal.com" });
+
+  Cal.ns["work"]("inline", {
+    elementOrSelector: "#cal-inline-embed",
+    calLink: "consult-with-riz/work",
+    config: { layout: "month_view" }
+  });
 
   Cal.ns["work"]("ui", {
     "theme": "light",
