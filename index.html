@@ -133,15 +133,28 @@
     border-bottom:1px solid var(--line);
   }
   .nav-inner{
-    max-width:var(--maxw);margin:0 auto;padding:14px 24px;
+    max-width:var(--maxw);margin:0 auto;padding:16px 24px;
     display:flex;align-items:center;justify-content:space-between;
   }
   .logo{
     font-family:'Bricolage Grotesque',sans-serif;
     font-weight:800;font-size:26px;color:var(--ink);
     text-decoration:none;letter-spacing:-0.02em;
+    display:flex;align-items:center;gap:14px;
   }
   .logo span{color:var(--coral);}
+  .logo-img{
+    height:52px;
+    width:auto;
+    display:block;
+  }
+  .logo .logo-text{
+    font-size:24px;
+    font-weight:800;
+    color:var(--ink);
+    letter-spacing:-0.02em;
+    text-transform:uppercase;
+  }
   .nav-cta{
     font-family:'Bricolage Grotesque',sans-serif;
     font-weight:700;font-size:15px;
@@ -571,8 +584,8 @@
 
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="#">soch<span>.</span></a>
-    <button type="button" class="nav-cta book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book a Free Audit</button>
+    <a class="logo" href="#"><img src="/Public/favicon-transparent-background.png" alt="Soch" class="logo-img"><span class="logo-text">Soch</span></a>
+    <button type="button" class="nav-cta book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book a FREE Strategy Call</button>
   </div>
 </nav>
 
@@ -590,7 +603,7 @@
       <div class="vsl-caption">How we automate your operations in 8 to 12 weeks. 3 minutes.</div>
     </div>
 
-    <button type="button" class="btn book-audit-btn" id="book" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book Your Free Automation Audit</button>
+    <button type="button" class="btn book-audit-btn" id="book" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book your FREE AI Strategy Call</button>
     <p class="btn-note"><strong>No retainer pitch. No pressure.</strong> Just thirty minutes on a call, and you walk away with an automation roadmap either way.</p>
   </div>
 </header>
@@ -744,7 +757,7 @@
     </div>
 
     <div class="cta-block">
-      <button type="button" class="btn book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book Your Free Automation Audit</button>
+      <button type="button" class="btn book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book your FREE AI Strategy Call</button>
       <p class="btn-note"><strong>Thirty minutes.</strong> You leave with a roadmap whether we work together or not.</p>
     </div>
   </div>
@@ -854,7 +867,7 @@
     </div>
 
     <div class="cta-block">
-      <button type="button" class="btn book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book Your Free Automation Audit</button>
+      <button type="button" class="btn book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book your FREE AI Strategy Call</button>
       <p class="btn-note"><strong>See what these numbers look like for your operation.</strong></p>
     </div>
   </div>
@@ -896,8 +909,8 @@
 <section class="final">
   <div class="wrap">
     <h2>Find Out What 25 to 30 Hours a Week Back Actually Looks Like</h2>
-    <p>Book a free 30-minute automation audit. We map your processes, show you what to automate first, and you keep the roadmap either way.</p>
-    <button type="button" class="btn book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book Your Free Automation Audit</button>
+    <p>Book a free 30-minute AI strategy call. We map your processes, show you what to automate first, and you keep the roadmap either way.</p>
+    <button type="button" class="btn book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book your FREE AI Strategy Call</button>
     <p class="btn-note">If we are not the right fit, we will tell you on the call.</p>
   </div>
 </section>
