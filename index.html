@@ -17,7 +17,7 @@
 <title>Done-For-You AI Automation | Soch</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&family=Wix+Madefor+Text:wght@400;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --coral:#EA6A47;
@@ -144,16 +144,23 @@
   }
   .logo span{color:var(--coral);}
   .logo-img{
-    height:52px;
-    width:auto;
+    height:56px;
+    width:56px;
+    border-radius:8px;
+    object-fit:contain;
     display:block;
+    flex-shrink:0;
   }
   .logo .logo-text{
-    font-size:24px;
-    font-weight:800;
-    color:var(--ink);
-    letter-spacing:-0.02em;
+    font-family:'Space Grotesk', 'Orbitron', sans-serif;
+    font-size:22px;
+    font-weight:700;
+    color:#2E2A26;
+    letter-spacing:0.06em;
     text-transform:uppercase;
+    display:inline-block;
+    margin-left:12px;
+    line-height:1;
   }
   .nav-cta{
     font-family:'Bricolage Grotesque',sans-serif;
@@ -594,7 +601,7 @@
 
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="#"><img src="/Public/favicon-transparent-background.png" alt="Soch" class="logo-img"><span class="logo-text">Soch</span></a>
+    <a class="logo" href="#"><img src="/Public/favicon-icon.png" alt="Soch" class="logo-img"><span class="logo-text">SOCH</span></a>
     <button type="button" class="nav-cta book-audit-btn" data-cal-link="consult-with-riz/work" data-cal-namespace="work" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>Book your FREE AI Strategy Call</button>
   </div>
 </nav>
